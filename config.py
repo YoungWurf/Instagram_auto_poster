@@ -1,3 +1,3 @@
-username="panoraia.vasilatou"
-password="kalimera2004"
-google_folder="14UJDyVWnUzSZk66HyYiomOGz7BqPn5tp"
+username="instagram-username"
+password="instagram-password"
+google_folder="gdrive-folder-code"
