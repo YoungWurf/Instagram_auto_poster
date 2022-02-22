@@ -117,6 +117,7 @@ def auto_post():
     count_of_attempts=0
     caption="#vaptisi#gamos#stolismosvaftisis#mpomponiera"
     while True: 
+        os.chdir(main_folder)
         if(check_Gdrive()==0):
             download_Gdrive_photos()
         elif(check_Gdrive()==1):
