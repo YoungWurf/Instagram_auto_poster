@@ -117,24 +117,23 @@ def auto_post():
     count_of_attempts=0
     caption="#vaptisi#gamos#stolismosvaftisis#mpomponiera"
     while True: 
-        os.chdir(main_folder)
-        if(check_Gdrive()==0):
+        try:
             download_Gdrive_photos()
-        elif(check_Gdrive()==1):
-            os.chdir(main_folder)
+        except:
+            os.chdir(main_folder) 
             print("\nNo initial photos in google drive\n")
             flag=1
             day=0
             while flag==1:
-               day+= 1
-               print("Waiting for new photos in Google drive , days waiting:"+str(day)+"\n")
-               t = datetime.datetime.today()
-               future = datetime.datetime(t.year,t.month,t.day,9,0)
-               if t.hour >= 9:
+                day+= 1
+                print("Waiting for new photos in Google drive , days waiting:"+str(day)+"\n")
+                t = datetime.datetime.today()
+                future = datetime.datetime(t.year,t.month,t.day,9,0)
+                if t.hour >= 9:
                     future += datetime.timedelta(days=1)
-                    time.sleep((future-t).total_seconds())
-                    flag=check_Gdrive()
-            download_Gdrive_photos()  
+                time.sleep((future-t).total_seconds())
+                flag=check_Gdrive()
+            download_Gdrive_photos(  
         os.chdir(main_folder) 
         path=os.getcwd()
         path=os.path.join(path,"instagram-photos-used")
