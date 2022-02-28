@@ -115,7 +115,7 @@ def download_Gdrive_photos():
 def auto_post():
     main_folder=os.getcwd()
     count_of_attempts=0
-    caption="#vaptisi#gamos#stolismosvaftisis#mpomponiera"
+    caption="#autopost"
     while True: 
         try:
             download_Gdrive_photos()
